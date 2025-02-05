@@ -31,6 +31,7 @@ const (
 	// 96 byte length
 	// @chatGPT reasoning
 	// Since signatures are in G2 (96 bytes), aggregation involves G2 point additions.
+	// 														(48 bytes), not sure when they use one ot the other (this would bring down the cost to the same as AggregatePublicKey i guess)
 	// A single G2 addition is ~10,000 gas.
 	// Aggregating n signatures follows log(n) complexity as well.
 	AggregateSignaturesGasCost uint64 = 120000
