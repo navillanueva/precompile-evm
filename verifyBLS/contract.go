@@ -21,14 +21,26 @@ import (
 )
 
 const (
-	// Reason
-	AggregatePublicKeysGasCost uint64 = 100000
+	// 48 byte length
+	// @chatGPT reasoning
+	// Since public keys are in G1 (48 bytes), aggregation only requires G1 point additions.
+	// A single G1 point addition is estimated to take ~2,500 gas.
+	// Aggregating n keys follows log(n) complexity, reducing the need for a large base gas cost.
+	AggregatePublicKeysGasCost uint64 = 60000
 
-	// Reason
+	// 96 byte length
+	// @chatGPT reasoning
+	// Since signatures are in G2 (96 bytes), aggregation involves G2 point additions.
+	// A single G2 addition is ~10,000 gas.
+	// Aggregating n signatures follows log(n) complexity as well.
 	AggregateSignaturesGasCost uint64 = 120000
 
-	// Reason
-	VerifySignatureBLSGasCost  uint64 = 80000 
+	//// @chatGPT reasoning
+	// Signature verification involves:
+	// 1 pairing operation (~40,000 gas).
+	// 1 exponentiation in G1 (~20,000 gas).
+	// Other operations (hashing, conversion) ~15,000 gas.
+	VerifySignatureBLSGasCost  uint64 = 75000 
 )
 
 // CUSTOM CODE STARTS HERE
