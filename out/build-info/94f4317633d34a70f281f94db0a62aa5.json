@@ -1,0 +1,1 @@
+{"id":"94f4317633d34a70f281f94db0a62aa5","source_id_to_path":{"0":"contracts/contracts/interfaces/IVerifyBLS.sol","1":"contracts/task1/receiverOnNicoLayerOne.sol","2":"contracts/task1/verifierActions.sol","3":"contracts/teleporter/ITeleporterMessenger.sol","4":"contracts/teleporter/ITeleporterReceiver.sol"},"language":"Solidity"}
